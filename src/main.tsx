@@ -4,6 +4,8 @@ import "./styles/main.scss";
 // start-path is 'images' because we have an alias 'images' in webpack.common.js
 import { Component } from "react";
 import ReactDom from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import MyHeader from "./components/header/MyHeader";
 
 interface AppProps {
   nothing: boolean;
@@ -26,18 +28,9 @@ class AppContainer extends Component<AppProps, AppState> {
 
   render() {
     return (
-      <header>
-        <div>Tect</div>
-        <nav>
-          <ul>
-            <li>345</li>
-            <li>564</li>
-            <li>kjewfgh</li>
-            <li>23476</li>
-            <li>fghwe</li>
-          </ul>
-        </nav>
-      </header>
+      <BrowserRouter>
+        <MyHeader />
+      </BrowserRouter>
     );
   }
 }

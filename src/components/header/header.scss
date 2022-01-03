@@ -1,0 +1,15 @@
+header {
+  background: $lightGray;
+  padding: 1em 2em;
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      text-decoration: unset;
+      color: $dark;
+    }
+  }
+}

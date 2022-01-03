@@ -1,0 +1,10 @@
+.button-box {
+  button {
+    background: unset;
+    border: unset;
+    cursor: pointer;
+  }
+  button:first-child {
+    margin-right: 0.5em;
+  }
+}
