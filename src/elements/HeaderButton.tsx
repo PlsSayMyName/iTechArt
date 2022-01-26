@@ -1,13 +1,11 @@
-import React from "react";
 import "./HeaderButton.scss";
 
-function HeaderButton() {
-  return (
-    <div className="button-box">
-      <button type="button">Sign In</button>
-      <button type="button">Registration</button>
-    </div>
-  );
+interface ButtonName {
+  name: string;
+}
+
+function HeaderButton({ name }: ButtonName) {
+  return <button type="button">{name}</button>;
 }
 
 export default HeaderButton;

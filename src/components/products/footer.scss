@@ -1,0 +1,48 @@
+footer {
+  padding: 2em 1em;
+  border-top: 1px solid $very-dark-blue;
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+
+    a {
+      padding: 1em;
+
+      &:hover {
+        color: $orange;
+        text-decoration: underline;
+      }
+    }
+  }
+  .subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+
+    p {
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+    .icon-box {
+      display: flex;
+      align-items: center;
+      column-gap: 1em;
+
+      .icon {
+        svg {
+          width: 1.5em;
+          height: 1.5em;
+          transition: 0.3s;
+        }
+        &:hover svg {
+          fill: $orange;
+        }
+      }
+    }
+  }
+}

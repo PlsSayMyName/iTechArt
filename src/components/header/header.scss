@@ -1,15 +1,26 @@
 header {
-  background: $lightGray;
-  padding: 1em 2em;
-
+  padding: 2em 1em;
+  margin-bottom: 0.5em;
   .navigation {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid $very-dark-blue;
 
-    .logo {
-      text-decoration: unset;
-      color: $dark;
+    a {
+      padding: 1em;
+
+      &:hover {
+        color: $orange;
+        text-decoration: underline;
+      }
+    }
+
+    .button-box {
+      margin-left: auto;
+
+      button:first-child {
+        margin-right: 1em;
+      }
     }
   }
 }

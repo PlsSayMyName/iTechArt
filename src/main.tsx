@@ -5,7 +5,8 @@ import "./styles/main.scss";
 import { Component } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import MyHeader from "./components/header/MyHeader";
+import Header from "@/components/header/Header";
+import Footer from "@/components/products/Footer";
 
 interface AppProps {
   nothing: boolean;
@@ -29,7 +30,8 @@ class AppContainer extends Component<AppProps, AppState> {
   render() {
     return (
       <BrowserRouter>
-        <MyHeader />
+        <Header />
+        <Footer />
       </BrowserRouter>
     );
   }
