@@ -1,3 +1,4 @@
+import { FaSearch } from "react-icons/fa";
 import "./SearchBar.scss";
 
 function SearchBar() {
@@ -6,7 +7,9 @@ function SearchBar() {
       <div className="input">
         <label className="search-bar" htmlFor="search">
           <input type="text" name="search" id="search" placeholder="Type your request here..." />
-          <button type="submit">Search</button>
+          <span>
+            <FaSearch />
+          </span>
         </label>
       </div>
     </form>

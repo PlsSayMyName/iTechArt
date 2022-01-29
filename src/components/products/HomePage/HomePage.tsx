@@ -4,6 +4,7 @@ import Adidas from "@/assets/images/category-adidas.png";
 import Nike from "@/assets/images/category-nike.png";
 import Puma from "@/assets/images/category-puma.png";
 import "./HomePage.scss";
+import Product from "@/components/products/Product/Product";
 
 function HomePage() {
   return (
@@ -19,6 +20,10 @@ function HomePage() {
           <Category name="Nike" link="/category/Nike" img={Nike} />
           <Category name="Puma" link="/category/Puma" img={Puma} />
         </div>
+      </section>
+      <section className="products wrapper">
+        <h2 className="title">All products</h2>
+        <Product />
       </section>
     </main>
   );
