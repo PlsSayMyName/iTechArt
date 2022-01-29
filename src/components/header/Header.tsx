@@ -8,7 +8,8 @@ import Men from "@/components/products/Men/Men";
 import Women from "@/components/products/Women/Women";
 import Logo from "@/assets/images/logo.svg";
 import "./header.scss";
-// ! Continue with React Hooks + next trello challenge
+import DropdownMenu from "@/elements/DropdownMenu";
+
 function MyHeader() {
   return (
     <>
@@ -18,7 +19,7 @@ function MyHeader() {
             <Link className="logo" to="/">
               <img src={Logo} alt="logo" />
             </Link>
-            <Link to="/collections">Collections</Link>
+            <DropdownMenu />
             <Link to="/men">Men</Link>
             <Link to="/women">Women</Link>
             <Link to="/about">About</Link>

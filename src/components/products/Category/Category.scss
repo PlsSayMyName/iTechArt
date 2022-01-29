@@ -1,7 +1,7 @@
 .category {
   .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 20em));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em 4em;
     .item {
       position: relative;

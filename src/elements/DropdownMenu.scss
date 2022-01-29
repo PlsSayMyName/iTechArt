@@ -1,0 +1,35 @@
+.dropdown {
+  position: relative;
+
+  button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+
+    svg {
+      margin-left: 0.2em;
+    }
+  }
+  .menu {
+    background: $white;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 3em;
+    width: 19em;
+    box-shadow: 0 1px 0.5em $very-dark-blue;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1.5em);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    display: flex;
+    flex-direction: column;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
