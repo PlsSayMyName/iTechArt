@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import debounce from "@/helpers/debounce";
@@ -5,31 +6,19 @@ import "./SearchBar.scss";
 
 function SearchBar() {
   const [search, setSearch] = useState([]);
-  // const getItems = () => {
-  //   fetch("https://fakestoreapi.com/products")
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       setResults(json);
-  //     });
-  // };
-  // useEffect(() => {
-  //   getItems();
-  // }, []);
-
-  // const [value, setValue] = useState("");
-
-  // const filteredItems = results.filter((result) => result.title.toLowerCase().includes(value.toLowerCase()));
+  // ! I dont know how to implement search& Arthur help me! :)
   const handleChange = (event: InputEvent) => {
     const { value } = event.target;
-    fetch(`https://fakestoreapi.com/products`)
+    // this api doesnt have a search function, but I wrote it like this
+    fetch(`https://fakestoreapi.com/products?search=q${value}`)
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
         // console.log(allSneakers);
-        setSearch(json.title);
+        setSearch(json);
       });
   };
-  const optVersion = useCallback(debounce(handleChange), []);
+  const debouceSearch = useCallback(debounce(handleChange), []);
   return (
     <form name="search-form" method="post">
       <div className="input">
@@ -40,7 +29,7 @@ function SearchBar() {
             id="search"
             placeholder="Type your request here..."
             // onChange={(event) => setValue(event.target.value)}
-            onChange={optVersion}
+            onChange={debouceSearch}
           />
           <span>
             <FaSearch />

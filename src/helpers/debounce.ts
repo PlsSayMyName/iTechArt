@@ -8,7 +8,7 @@ const debounce = (func: { apply: (arg0: unknown, arg1: unknown[]) => void }) => 
     timer = setTimeout(() => {
       timer = null;
       func.apply(context, args);
-    }, 600);
+    }, 300);
   };
 };
 

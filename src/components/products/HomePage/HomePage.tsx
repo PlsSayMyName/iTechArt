@@ -12,7 +12,6 @@ function HomePage() {
       <section className="hero">
         <h1 className="title">Sneakers shop</h1>
         <p className="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi qui ullam voluptatem.</p>
-        {/* TODO Need to do a live search functionality */}
         <SearchBar />
       </section>
       <section className="category wrapper">

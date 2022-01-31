@@ -17,9 +17,13 @@ header {
 
     .button-box {
       margin-left: auto;
-
+      button {
+        background: unset;
+        border: unset;
+        cursor: pointer;
+      }
       button:first-child {
-        margin-right: 1em;
+        margin-right: 0.5em;
       }
     }
   }
