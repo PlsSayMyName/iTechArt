@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/button-has-type */
 import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
@@ -10,12 +12,22 @@ import Women from "@/components/products/Women/Women";
 import Logo from "@/assets/images/logo.svg";
 import "./Header.scss";
 import DropdownMenu from "@/elements/DropdownMenu";
-import Modal from "@/elements/Modal/Modal";
-import ModalLogin from "@/elements/Modal/ModalLogin";
+import ModalManager from "@/elements/Modal/ModalManager";
 
 function MyHeader() {
-  const [modalActive, setModalActive] = useState(true);
-  const [modalLoginActive, setLoginModalActive] = useState(true);
+  const [modalOpen, setModal] = useState(false);
+  const openModal = (event: MouseEvent) => {
+    event.preventDefault();
+    const {
+      target: {
+        dataset: { modal },
+      },
+    } = event;
+    if (modal) setModal(modal);
+  };
+  const closeModal = () => {
+    setModal("");
+  };
   return (
     <>
       <header>
@@ -29,27 +41,18 @@ function MyHeader() {
             <Link to="/women">Women</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
-            <div className="button-box">
-              <button onClick={() => setModalActive(true)} className="open-modal">
+            <div className="button-box" onClick={openModal}>
+              <button type="button" data-modal="modal-sign" className="open-modal">
                 Sign In
               </button>
-              <button onClick={() => setLoginModalActive(true)} className="open-modal">
+              <button type="button" data-modal="modal-reg" className="open-modal">
                 Registration
               </button>
+              <ModalManager closeFn={closeModal} modal={modalOpen} />
             </div>
           </nav>
         </div>
       </header>
-      <ModalLogin active={modalLoginActive} setActive={setLoginModalActive}>
-        <div className="div">
-          <p>123</p>
-        </div>
-      </ModalLogin>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <form name="login-form" method="POST">
-          <input type="text" name="text" id="text" />
-        </form>
-      </Modal>
       <Routes>
         <Route path="/collections" element={<Collections />} />
         <Route path="/men" element={<Men />} />
