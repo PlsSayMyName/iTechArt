@@ -11,7 +11,7 @@ import Men from "@/components/products/Men/Men";
 import Women from "@/components/products/Women/Women";
 import Logo from "@/assets/images/logo.svg";
 import "./Header.scss";
-import DropdownMenu from "@/elements/DropdownMenu";
+import DropdownMenu from "@/elements/DropdownMenu/DropdownMenu";
 import ModalManager from "@/elements/Modal/ModalManager";
 
 function MyHeader() {

@@ -14,18 +14,83 @@
   &-body {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-    min-width: 50vw;
-    min-height: 20em;
     position: relative;
+    padding: 1.5em;
+    border-radius: 0.6em;
+    min-width: 20em;
+
+    .title {
+      font-size: 2.4em;
+      color: $orange;
+      line-height: 1em;
+      letter-spacing: 0.06em;
+    }
+    .subtitle {
+      line-height: 1.5em;
+      border-bottom: 1px solid $orange;
+      padding-bottom: 1em;
+    }
+    form {
+      max-width: 50em;
+      .input {
+        display: block;
+        color: red;
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+        label {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      input[type="submit"] {
+        background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+        background-size: 200% auto;
+        padding: 0.6em 2em;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        color: $white;
+        box-shadow: 0 0 2.5em $pale-orange;
+        border-radius: 0.8em;
+        display: block;
+        border: none;
+        cursor: pointer;
+        margin: 2em auto 0;
+        font-size: 1.2em;
+        letter-spacing: 0.15em;
+        width: 100%;
+
+        &:hover {
+          background-position: right center;
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
 
     .close {
-      background: transparent;
+      background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+      background-size: 200% auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: none;
+      border-radius: 50%;
       cursor: pointer;
-      padding: 0.2em;
+      padding: 0.3em;
       position: absolute;
-      top: 0.2em;
-      right: 0.8em;
+      top: 0.4em;
+      right: 0.7em;
+      transition: 0.3s;
+
+      &:hover {
+        background-position: right center;
+      }
+
+      svg {
+        fill: $white;
+      }
     }
   }
 }
