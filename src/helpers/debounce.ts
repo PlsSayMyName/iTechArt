@@ -1,15 +1,12 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
-/* eslint-disable func-names */
-const debounce = (func: { apply: (arg0: unknown, arg1: unknown[]) => void }) => {
-  let timer: NodeJS.Timeout | null;
-  return function (...args: Array<unknown>) {
-    const context = this;
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(() => {
-      timer = null;
-      func.apply(context, args);
-    }, 300);
+const debounce = (n: number, fn: (...params: unknown[]) => unknown, immed = false) => {
+  let timer: number | undefined;
+  return function (this: unknown, ...args: unknown[]) {
+    if (timer === undefined && immed) {
+      fn.apply(this, args);
+    }
+    clearTimeout(timer);
+    timer = window.setTimeout(() => fn.apply(this, args), n);
+    return timer;
   };
 };
-
 export default debounce;
