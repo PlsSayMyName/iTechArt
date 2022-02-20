@@ -26,6 +26,7 @@
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     display: flex;
     flex-direction: column;
+    z-index: 10;
     &.active {
       opacity: 1;
       visibility: visible;

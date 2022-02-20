@@ -4,9 +4,12 @@ import "./styles/main.scss";
 // start-path is 'images' because we have an alias 'images' in webpack.common.js
 import { Component } from "react";
 import ReactDom from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "@/components/header/Header";
 import Footer from "@/components/products/Footer";
+import HomePage from "./components/products/HomePage/HomePage";
+import Products from "./components/products/Products/Products";
+import Product from "./components/products/Product/Product";
 
 interface AppProps {
   nothing: boolean;
@@ -31,6 +34,11 @@ class AppContainer extends Component<AppProps, AppState> {
     return (
       <BrowserRouter>
         <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<Product />} />
+        </Routes>
         <Footer />
       </BrowserRouter>
     );
