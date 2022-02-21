@@ -10,22 +10,19 @@
     max-height: 35em;
   }
   .right {
-    .title-box {
+    span {
+      color: $very-dark-blue;
+      text-transform: uppercase;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.05em;
+      font-size: 1.1em;
+      color: $orange;
+    }
+    h1 {
+      font-size: 1.5em;
+      letter-spacing: 0.02em;
       margin-bottom: 1em;
-      h1 {
-        font-size: 1.3em;
-        letter-spacing: 0.02em;
-      }
-
-      span {
-        border: 1px solid $orange;
-        border-radius: 1em;
-        padding: 0.3em;
-        color: $very-dark-blue;
-      }
     }
     .description {
       color: $very-dark-blue;
@@ -41,9 +38,9 @@
       }
     }
     .price {
-      font-size: 1.2em;
+      font-size: 2.2em;
       margin-bottom: 1.2em;
-      color: $dark-grayish-blue;
+      color: $black;
     }
     .btn-box {
       display: flex;

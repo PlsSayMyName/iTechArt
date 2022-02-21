@@ -3,12 +3,15 @@
 /* eslint-disable react/button-has-type */
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import Logo from "@/assets/images/logo.svg";
 import "./Header.scss";
 import DropdownMenu from "@/elements/DropdownMenu/DropdownMenu";
 import ModalManager from "@/elements/Modal/ModalManager";
 
 function Header() {
+  const state = useSelector((state) => state.handleCart);
   const [modalOpen, setModal] = useState(false);
   const openModal = (event: MouseEvent) => {
     event.preventDefault();
@@ -40,6 +43,10 @@ function Header() {
             <button type="button" data-modal="modal-reg" className="open-modal">
               Registration
             </button>
+            <Link to="/cart" className="cart">
+              <span>{state.length}</span>
+              <FaShoppingCart />
+            </Link>
             <ModalManager closeFn={closeModal} modal={modalOpen} />
           </div>
         </nav>

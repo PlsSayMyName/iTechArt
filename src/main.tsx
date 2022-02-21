@@ -5,11 +5,16 @@ import "./styles/main.scss";
 import { Component } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
 import Header from "@/components/header/Header";
 import Footer from "@/components/products/Footer";
 import HomePage from "./components/products/HomePage/HomePage";
 import Products from "./components/products/Products/Products";
 import Product from "./components/products/Product/Product";
+import store from "./redux/store";
+import Cart from "./components/products/Cart/Cart";
+import About from "./components/products/About/About";
+import Contact from "./components/products/Contact/Contact";
 
 interface AppProps {
   nothing: boolean;
@@ -33,13 +38,18 @@ class AppContainer extends Component<AppProps, AppState> {
   render() {
     return (
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<Product />} />
-        </Routes>
-        <Footer />
+        <Provider store={store}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </Provider>
       </BrowserRouter>
     );
   }
