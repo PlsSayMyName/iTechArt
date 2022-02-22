@@ -4,17 +4,37 @@ header {
   .navigation {
     display: flex;
     align-items: center;
+    padding-bottom: 1em;
     border-bottom: 1px solid $very-dark-blue;
 
-    a {
+    .logo {
+      margin-right: 5em;
+      img {
+        max-width: 5em;
+        width: 100%;
+        max-height: 4em;
+      }
+    }
+    a:not(.logo):not(.avatar) {
       padding: 1em;
-
       &:hover {
         color: $orange;
         text-decoration: underline;
       }
     }
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+      img {
+        max-width: 3em;
+        width: 100%;
+        object-fit: contain;
+        max-height: 3em;
+        height: 100%;
+      }
+    }
     .button-box {
       margin-left: auto;
       display: flex;
@@ -24,6 +44,7 @@ header {
         border: unset;
         cursor: pointer;
       }
+
       .cart {
         position: relative;
         span {

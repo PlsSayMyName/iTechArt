@@ -9,7 +9,16 @@ footer {
     display: flex;
     align-items: center;
 
-    a {
+    .logo {
+      margin-right: 5em;
+      img {
+        max-width: 5em;
+        width: 100%;
+        max-height: 4em;
+      }
+    }
+
+    a:not(.logo) {
       padding: 1em;
 
       &:hover {

@@ -1,12 +1,9 @@
-.hero,
-.category {
-  margin-bottom: 3em;
-}
 .hero {
   background: no-repeat center url(/src/assets/images/hero-image.webp);
   width: 100%;
   height: calc(100vh - 8em);
   position: relative;
+  margin-bottom: 3em;
 
   .text-box {
     position: absolute;
@@ -50,3 +47,4 @@
     }
   }
 }
+// .latest

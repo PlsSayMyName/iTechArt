@@ -1,24 +1,26 @@
-import { useDispatch, useSelector } from "react-redux";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-shadow */
+import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import { Link } from "react-router-dom";
 import { addCart, delCart } from "@/redux/action";
 import "./Cart.scss";
 
 function Cart() {
-  const state = useSelector((state) => state.handleCart);
+  const state = useSelector((state: RootStateOrAny) => state.handleCart);
   const dispatch = useDispatch();
 
-  const handleAdd = (item) => {
+  const handleAdd = (item: unknown) => {
     dispatch(addCart(item));
   };
 
-  const handleDel = (item) => {
+  const handleDel = (item: unknown) => {
     dispatch(delCart(item));
   };
 
   const emptyCart = () => <h1 className="title">Your cart is empty</h1>;
 
-  const cartItems = (product) => (
-    <div className="product-item">
+  const cartItems = (product: any) => (
+    <div className="product-item" key={product.id}>
       <div className="left">
         <img src={product.image} alt={product.title} height="200px" width="180px" />
       </div>

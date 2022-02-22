@@ -15,6 +15,7 @@ import store from "./redux/store";
 import Cart from "./components/products/Cart/Cart";
 import About from "./components/products/About/About";
 import Contact from "./components/products/Contact/Contact";
+import Profile from "./components/users/Profile/Profile";
 
 interface AppProps {
   nothing: boolean;
@@ -33,6 +34,12 @@ class AppContainer extends Component<AppProps, AppState> {
     if (!goExlcude) {
       console.warn("class-dead-code doesn't work");
     }
+    // const token = localStorage.getItem("accessToken");
+
+    // if (!token) {
+    //   return console.log(token);
+    // }
+    // return console.log(token);
   }
 
   render() {
@@ -41,6 +48,7 @@ class AppContainer extends Component<AppProps, AppState> {
         <Provider store={store}>
           <Header />
           <Routes>
+            <Route path="/profile" element={<Profile />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<Product />} />

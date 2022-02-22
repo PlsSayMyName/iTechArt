@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -39,7 +40,7 @@ function Products() {
     return <div className="loader" />;
   }
 
-  const filterProduct = (cat) => {
+  const filterProduct = (cat: any) => {
     const updatedList = data.filter((el) => el.category === cat);
     setFilter(updatedList);
   };
@@ -65,7 +66,7 @@ function Products() {
           </button>
         </div>
         <div className="products-grid">
-          {filter.map((product) => (
+          {filter.map((product: any) => (
             <div className="item" key={product.id}>
               <h2>{product.title}</h2>
               <img className="img" src={product.image} alt={product.title} />
@@ -81,10 +82,12 @@ function Products() {
   }
 
   return (
-    <section className="latest wrapper">
-      <h2>Latest products</h2>
-      {loading ? <Loading /> : <ShowProducts />}
-    </section>
+    <main>
+      <section className="latest wrapper">
+        <h2 className="title">Latest products</h2>
+        {loading ? <Loading /> : <ShowProducts />}
+      </section>
+    </main>
   );
 }
 

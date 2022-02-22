@@ -9,10 +9,11 @@ interface Input {
   id: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onClick?: MouseEvent;
 }
 
-function InputText({ type, name, id, value, onChange }: Input) {
-  return <input type={type} name={name} id={id} value={value} onChange={onChange} />;
+function InputText({ type, name, id, value, onChange, onClick }: Input) {
+  return <input type={type} name={name} id={id} value={value} onChange={onChange} onClick={onClick} />;
 }
 
 export default InputText;
